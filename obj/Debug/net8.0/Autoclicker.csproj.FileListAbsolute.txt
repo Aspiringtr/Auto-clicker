@@ -65,3 +65,4 @@ E:\program\c#\Autoclicker\Autoclicker\obj\Debug\net8.0\refint\Autoclicker.dll
 E:\program\c#\Autoclicker\Autoclicker\obj\Debug\net8.0\Autoclicker.pdb
 E:\program\c#\Autoclicker\Autoclicker\obj\Debug\net8.0\Autoclicker.genruntimeconfig.cache
 E:\program\c#\Autoclicker\Autoclicker\obj\Debug\net8.0\ref\Autoclicker.dll
+E:\program\c#\Autoclicker\Autoclicker\obj\Debug\net8.0\Autoclicker.sourcelink.json
