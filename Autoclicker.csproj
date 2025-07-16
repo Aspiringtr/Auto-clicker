@@ -7,6 +7,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="Assets\styles\Default_styles.axaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\styles\Default_styles.axaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.0" />

@@ -12,30 +12,11 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="15"
         CanResize="False">
-	<Window.Styles>
-		<Style Selector="Button">
-			<Setter Property="FontSize" Value="10"/>
-			<Setter Property="Grid.ColumnSpan" Value="1"/>
-			<Setter Property="Foreground" Value="White"/>
-			<Setter Property="Grid.Column" Value="1"/>
-			<Setter Property="HorizontalAlignment" Value="Stretch"/>
-			<Setter Property="TextBlock.TextAlignment" Value="Center"/>
-		</Style>
-		<Style Selector="TextBlock">
-			<Setter Property="Grid.Column" Value="3"/>
-			<Setter Property="Grid.ColumnSpan" Value="2"/>
-			<Setter Property="Background" Value="Transparent"/>
-		</Style>
-	</Window.Styles>
-	<Grid ColumnDefinitions="30,50,*,*,30" RowDefinitions="50,*,*,*,*,*" ColumnSpacing="5" RowSpacing="5">
+	<Grid ColumnDefinitions="30,*,*,*,30" RowDefinitions="50,*,*,*,*,*" RowSpacing="">
 		<TextBlock Foreground="White" FontWeight="Bold" FontSize="22" Text="Auto clicker" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 		<Button Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center">Capture position</Button>
-		<Button Grid.Row="2">Delay</Button>
-		<Button Grid.Row="3">Clicks</Button>
-		<Button Grid.Row="4">Times</Button>
+		<ButtonSpinner Grid.Row="2" Height="10" Content="delay"></ButtonSpinner>
+		<ButtonSpinner Grid.Row="3" Height="10" Content="clicks"></ButtonSpinner>
+		<ButtonSpinner Grid.Row="4" Height="10" Content="times"></ButtonSpinner>
 	</Grid>
 </Window>
-<!--xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-x:Class="Autoclicker.MainWindow"-->
