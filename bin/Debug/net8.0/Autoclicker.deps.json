@@ -12,7 +12,8 @@
           "Avalonia.Desktop": "11.3.0",
           "Avalonia.Diagnostics": "11.3.0",
           "Avalonia.Fonts.Inter": "11.3.0",
-          "Avalonia.Themes.Fluent": "11.3.0"
+          "Avalonia.Themes.Fluent": "11.3.0",
+          "MouseKeyHook": "5.7.1"
         },
         "runtime": {
           "Autoclicker.dll": {}
@@ -324,6 +325,14 @@
           }
         }
       },
+      "MouseKeyHook/5.7.1": {
+        "runtime": {
+          "lib/net472/Gma.System.MouseKeyHook.dll": {
+            "assemblyVersion": "5.7.1.0",
+            "fileVersion": "5.7.1.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.9": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.9",
@@ -565,6 +574,13 @@
       "sha512": "sha512-MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
       "path": "microcom.runtime/0.11.0",
       "hashPath": "microcom.runtime.0.11.0.nupkg.sha512"
+    },
+    "MouseKeyHook/5.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c0VhB6cbcOpMOcoCQmvPMVqxaH76S4IPHwpbCIY7XKUNimdj9+81rX+Evnu5O53xYgUvdD7g0qmlVeZP2wGCnA==",
+      "path": "mousekeyhook/5.7.1",
+      "hashPath": "mousekeyhook.5.7.1.nupkg.sha512"
     },
     "SkiaSharp/2.88.9": {
       "type": "package",

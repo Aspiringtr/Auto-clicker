@@ -40,6 +40,11 @@
 
   <Style Selector="TextBlock">
     <Setter Property="Background" Value="Transparent"/>
+	<Setter Property="Foreground" Value="White"/>
   </Style>
+
+	<Style Selector="TextBlock.status">
+		<Setter Property="FontSize" Value="10"/>		
+	</Style>
 
 </Style>
