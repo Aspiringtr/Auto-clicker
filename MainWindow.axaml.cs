@@ -7,7 +7,6 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using Gma.System.MouseKeyHook;
 
 
 namespace Autoclicker
@@ -54,7 +53,7 @@ namespace Autoclicker
                     });
                 }
 
-                await Task.Delay(10); // Update every 100ms
+                await Task.Delay(10); 
             }
         }
 
@@ -64,16 +63,9 @@ namespace Autoclicker
             {
                 if (GetCursorPos(out POINT point))
                 {
-                    CapturedText.Text = $"Captured at X: {point.X}, Y: {point.Y}";
+                    CapturedText.Text = $"X:{point.X} Y:{point.Y}";
+                    PositionText.Content = "Capture position";
                 }
-            }
-            else if (e.Key == Key.Enter && _isCapturing)
-            {
-                if (GetCursorPos(out POINT point))
-                {
-                    CapturedText.Text = $"{point.X} {point.Y}";
-                }
-
                 _isCapturing = false;
                 _cts?.Cancel();
             }
@@ -82,7 +74,7 @@ namespace Autoclicker
         protected override void OnOpened(EventArgs e)
         {
             base.OnOpened(e);
-            this.Focus(); // Give keyboard focus to the window
+            this.Focus();
         }
 
         protected override void OnClosed(EventArgs e)

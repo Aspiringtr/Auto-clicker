@@ -35,7 +35,7 @@
 	
 	<Grid ColumnDefinitions="30,*,*,*,30" RowDefinitions="50,*,*,*,*,*,30" Focusable="True" IsTabStop="True">
 		<TextBlock Classes="heading" Text="Click Bot" HorizontalAlignment="Center"></TextBlock>
-		<Button Name="PositionText" Click="OnStartClick" Grid.Row="1" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center" Content="Capture position"></Button>
+		<Button Name="PositionText" Click="OnStartClick" Grid.Row="1" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center" VerticalAlignment="Center" Content="Capture position"></Button>
 		<ButtonSpinner Grid.Row="2" Content="Delay"></ButtonSpinner>
 		<ButtonSpinner Grid.Row="3" Content="Clicks"></ButtonSpinner>
 		<ButtonSpinner Grid.Row="4" Content="Times"></ButtonSpinner>
