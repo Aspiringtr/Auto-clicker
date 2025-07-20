@@ -21,6 +21,7 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
 ## 🧰 Tech Stack
 
 - [.NET 7.0+](https://dotnet.microsoft.com/)
+- [Python](https://www.python.org/)
 - [Avalonia UI](https://avaloniaui.net/) (Cross-platform UI)
 - Windows API via `user32.dll` for native mouse control (Windows only)
 
