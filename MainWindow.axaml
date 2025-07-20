@@ -39,7 +39,7 @@
 		<ButtonSpinner Grid.Row="2" Content="Delay"></ButtonSpinner>
 		<ButtonSpinner Grid.Row="3" Content="Clicks"></ButtonSpinner>
 		<ButtonSpinner Grid.Row="4" Content="Times"></ButtonSpinner>
-		<Button Grid.Row="5">Start</Button>
-		<TextBlock Name="CapturedText" Text="" Grid.Row="6" Grid.ColumnSpan="5"></TextBlock>
+		<Button Click="startClicking" Grid.Row="5">Start</Button>
+		<TextBlock Name="CapturedText" FontSize="10" Text="" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Opacity=".5"></TextBlock>
 	</Grid>
 </Window>
