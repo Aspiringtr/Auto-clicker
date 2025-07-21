@@ -24,7 +24,9 @@ namespace Autoclicker
         public int posX;
         public int posY;
         public static List<string> delay = new List<string>() {"10 ms","20 ms","30 ms","40 ms","50 ms","100 ms","150 ms","200 ms"};
-        public int num = 0;
+        public static List<string> time = new List<string>() { "30 sec", "1 min", "5 min", "10 min", "20 min", "30 min"};
+        public int numD = 0;
+        public int numT = 0;
 
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(out POINT lpPoint);
@@ -46,35 +48,6 @@ namespace Autoclicker
         {
             InitializeComponent();
         }
-
-        private void delayIncrement(object? sender,RoutedEventArgs e)
-        {
-            if (num < 8)
-            {
-                delayText.Text = delay[num];
-                num = num + 1;
-            }
-            else
-            {
-                num = 0;
-                delayText.Text = delay[num];
-            }
-        }
-
-        private void delayDecrement(object? sender, RoutedEventArgs e)
-        {
-            if (num !=0 ) 
-            {
-                num=num - 1;    
-                delayText.Text = delay[num];
-            }
-            else 
-            {
-                num = 7;
-                delayText.Text = delay[num];
-            }
-        }
-
         private void trackMouse(object sender, RoutedEventArgs e)
         {
             if (_isCapturing)
@@ -84,7 +57,6 @@ namespace Autoclicker
             _cts = new CancellationTokenSource();
             Task.Run(() => TrackMousePosition(_cts.Token));
         }
-
         private async Task TrackMousePosition(CancellationToken token)
         {
             while (!token.IsCancellationRequested)
@@ -117,6 +89,58 @@ namespace Autoclicker
                 _clk = true;
             }
         }
+        private void delayIncrement(object? sender, RoutedEventArgs e)
+        {
+            if (numD < 8)
+            {
+                delayText.Text = delay[numD];
+                numD = numD + 1;
+            }
+            else
+            {
+                numD = 0;
+                delayText.Text = delay[numD];
+            }
+        }
+        private void delayDecrement(object? sender, RoutedEventArgs e)
+        {
+            if (numD != 0)
+            {
+                numD = numD - 1;
+                delayText.Text = delay[numD];
+            }
+            else
+            {
+                numD = 7;
+                delayText.Text = delay[numD];
+            }
+        }
+        private void timeIncrement(object? sender, RoutedEventArgs e)
+        {
+            if (numT < 6)
+            {
+                timeText.Text = time[numT];
+                numT = numT + 1;
+            }
+            else
+            {
+                numT = 0;
+                timeText.Text = time[numT];
+            }
+        }
+        private void timeDecrement(object? sender, RoutedEventArgs e)
+        {
+            if (numT != 0)
+            {
+                numT = numT - 1;
+                timeText.Text = time[numT];
+            }
+            else
+            {
+                numT = 5;
+                timeText.Text = time[numT];
+            }
+        }
         private async void startClicking(object? sender, RoutedEventArgs e)
         {
             _letsStartClicking = true;
@@ -137,7 +161,6 @@ namespace Autoclicker
             base.OnOpened(e);
             this.Focus();
         }
-
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);

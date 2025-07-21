@@ -14,8 +14,7 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="15"
         CanResize="False"
-		KeyDown="OnKeyDown"
-		>
+		KeyDown="OnKeyDown">
 	<Window.Styles>
 		<Style Selector="Button">
 			<Setter Property="Grid.ColumnSpan" Value="3"/>
@@ -34,14 +33,18 @@
 		<TextBlock Classes="heading" Text="Click Bot" HorizontalAlignment="Center"></TextBlock>
 		<Button Name="PositionText" Click="trackMouse" Grid.Row="1" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center" VerticalAlignment="Center" Content="Capture position"></Button>
 		<Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" ColumnDefinitions="*,30,30">
-			<TextBlock Grid.Column="0" Name="delayText"  VerticalAlignment="Center" FontSize="10" Text="Delay"></TextBlock>
+			<Border BorderBrush="White" BorderThickness="1" CornerRadius="2" Height="30">
+				<TextBlock Grid.Column="0" Name="delayText" Padding="5" VerticalAlignment="Center" FontSize="10" Text="Delay"/>
+			</Border>
 			<Button Grid.Column="1" Width="30" Click="delayIncrement">+</Button>
 			<Button Grid.Column="2" Width="30" Click="delayDecrement">-</Button>
 		</Grid>
 		<Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" ColumnDefinitions="*,30,30">
-			<TextBlock Grid.Column="0" Name="timeText" VerticalAlignment="Center" FontSize="10" Text="Time"></TextBlock>
-			<Button Grid.Column="1" Width="30" >+</Button>
-			<Button Grid.Column="2" Width="30" >-</Button>
+			<Border BorderBrush="White" BorderThickness="1" CornerRadius="2" Height="30">
+				<TextBlock Grid.Column="0" Name="timeText" Padding="5" VerticalAlignment="Center" FontSize="10" Text="Time"></TextBlock>
+			</Border>
+			<Button Grid.Column="1" Width="30" Click="timeIncrement" >+</Button>
+			<Button Grid.Column="2" Width="30" Click="timeDecrement">-</Button>
 		</Grid>
 		<Button Click="startClicking" Grid.Row="4" HorizontalAlignment="Stretch">Start</Button>
 		<TextBlock Classes="status" Name="CapturedText" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Opacity=".5"></TextBlock>
