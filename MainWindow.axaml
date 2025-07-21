@@ -3,6 +3,7 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
         x:Class="Autoclicker.MainWindow"
 		TransparencyLevelHint="AcrylicBlur"
 		Background="rgba(0, 0, 0, 0.6)"
@@ -20,10 +21,6 @@
 			<Setter Property="Grid.ColumnSpan" Value="3"/>
 			<Setter Property="Grid.Column" Value="1"/>
 		</Style>
-		<Style Selector="ButtonSpinner">
-			<Setter Property="Grid.ColumnSpan" Value="3"/>
-			<Setter Property="Grid.Column" Value="1"/>
-		</Style>
 		<Style Selector="TextBlock.heading">
 			<Setter Property="Grid.Column" Value="0"/>
 			<Setter Property="Grid.ColumnSpan" Value="5"/>
@@ -33,13 +30,20 @@
 		</Style>
 	</Window.Styles>
 	
-	<Grid ColumnDefinitions="30,*,*,*,30" RowDefinitions="50,*,*,*,*,*,30" Focusable="True" IsTabStop="True">
+	<Grid ColumnDefinitions="30,*,*,*,30" RowDefinitions="50,*,*,*,*,30" Focusable="True" IsTabStop="True">
 		<TextBlock Classes="heading" Text="Click Bot" HorizontalAlignment="Center"></TextBlock>
-		<Button Name="PositionText" Click="OnStartClick" Grid.Row="1" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center" VerticalAlignment="Center" Content="Capture position"></Button>
-		<ButtonSpinner Grid.Row="2" Content="Delay"></ButtonSpinner>
-		<ButtonSpinner Grid.Row="3" Content="Clicks"></ButtonSpinner>
-		<ButtonSpinner Grid.Row="4" Content="Times"></ButtonSpinner>
-		<Button Click="startClicking" Grid.Row="5">Start</Button>
-		<TextBlock Name="CapturedText" FontSize="10" Text="" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Opacity=".5"></TextBlock>
+		<Button Name="PositionText" Click="trackMouse" Grid.Row="1" HorizontalAlignment="Stretch" TextBlock.TextAlignment="Center" VerticalAlignment="Center" Content="Capture position"></Button>
+		<Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" ColumnDefinitions="*,30,30">
+			<TextBlock Grid.Column="0" Name="delayText"  VerticalAlignment="Center" FontSize="10" Text="Delay"></TextBlock>
+			<Button Grid.Column="1" Width="30" Click="delayIncrement">+</Button>
+			<Button Grid.Column="2" Width="30" Click="delayDecrement">-</Button>
+		</Grid>
+		<Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" ColumnDefinitions="*,30,30">
+			<TextBlock Grid.Column="0" Name="timeText" VerticalAlignment="Center" FontSize="10" Text="Time"></TextBlock>
+			<Button Grid.Column="1" Width="30" >+</Button>
+			<Button Grid.Column="2" Width="30" >-</Button>
+		</Grid>
+		<Button Click="startClicking" Grid.Row="4" HorizontalAlignment="Stretch">Start</Button>
+		<TextBlock Classes="status" Name="CapturedText" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Opacity=".5"></TextBlock>
 	</Grid>
 </Window>
