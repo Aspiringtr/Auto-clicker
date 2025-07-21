@@ -23,7 +23,7 @@ namespace Autoclicker
         const int MOUSEEVENTF_LEFTUP = 0x04;
         public int posX;
         public int posY;
-        public static List<string> delay = new List<string>() {"Delay","10 ms","20 ms","30 ms","40 ms"};
+        public static List<string> delay = new List<string>() {"10 ms","20 ms","30 ms","40 ms","50 ms","100 ms","150 ms","200 ms"};
         public int num = 0;
 
         [DllImport("user32.dll")]
@@ -49,9 +49,10 @@ namespace Autoclicker
 
         private void delayIncrement(object? sender,RoutedEventArgs e)
         {
-            if (num < 5)
+            if (num < 8)
             {
-                delayText.Text = delay[num++];
+                delayText.Text = delay[num];
+                num = num + 1;
             }
             else
             {
@@ -62,14 +63,15 @@ namespace Autoclicker
 
         private void delayDecrement(object? sender, RoutedEventArgs e)
         {
-            if (num < 0) 
+            if (num !=0 ) 
             {
-                num = 4;
+                num=num - 1;    
                 delayText.Text = delay[num];
             }
             else 
             {
-                delayText.Text = delay[num--];
+                num = 7;
+                delayText.Text = delay[num];
             }
         }
 
