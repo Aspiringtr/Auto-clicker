@@ -26,6 +26,8 @@ namespace Autoclicker
         public static List<int> timeNo = new List<int>() {30,60,300,600,1200,1800};
         public int numD = 0;
         public int numT = 0;
+        public int numSD = 0;
+        public int numST = 0;
 
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(out POINT lpPoint);
@@ -90,11 +92,13 @@ namespace Autoclicker
             if (numD < 8)
             {
                 delayText.Text = delay[numD];
+                numSD = numD;
                 numD = numD + 1;
             }
             else
             {
                 numD = 0;
+                numSD = numD;
                 delayText.Text = delay[numD];
             }
         }
@@ -103,11 +107,13 @@ namespace Autoclicker
             if (numD != 0)
             {
                 numD = numD - 1;
+                numSD = numD;
                 delayText.Text = delay[numD];
             }
             else
             {
                 numD = 7;
+                numSD = numD;
                 delayText.Text = delay[numD];
             }
         }
@@ -116,11 +122,13 @@ namespace Autoclicker
             if (numT < 6)
             {
                 timeText.Text = time[numT];
+                numST = numT;
                 numT = numT + 1;
             }
             else
             {
                 numT = 0;
+                numST = numT;
                 timeText.Text = time[numT];
             }
         }
@@ -129,17 +137,19 @@ namespace Autoclicker
             if (numT != 0)
             {
                 numT = numT - 1;
+                numST = numT;
                 timeText.Text = time[numT];
             }
             else
             {
                 numT = 5;
+                numST = numT;
                 timeText.Text = time[numT];
             }
         }
         private async void startClicking(object? sender, RoutedEventArgs e)
         {
-            _cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeNo[numT]));
+            _cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeNo[numST]));
             var token = _cts.Token;
             try
             {
@@ -150,7 +160,7 @@ namespace Autoclicker
                     mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
                     await Task.Delay(10);
                     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-                    await Task.Delay(delayNo[numD]);
+                    await Task.Delay(delayNo[numSD]);
 
                     token.ThrowIfCancellationRequested();
                 }
