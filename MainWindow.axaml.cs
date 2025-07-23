@@ -7,15 +7,12 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Autoclicker
 {
     public partial class MainWindow : Window
     {
-        private bool _clk = false;
-        private bool _letsStartClicking = false;
         private bool _isCapturing = false;
         private CancellationTokenSource _cts;
 
@@ -24,7 +21,9 @@ namespace Autoclicker
         public int posX;
         public int posY;
         public static List<string> delay = new List<string>() {"10 ms","20 ms","30 ms","40 ms","50 ms","100 ms","150 ms","200 ms"};
+        public static List<int> delayNo = new List<int>() {10,20,30,40,50,100,150,200};
         public static List<string> time = new List<string>() { "30 sec", "1 min", "5 min", "10 min", "20 min", "30 min"};
+        public static List<int> timeNo = new List<int>() {30,60,300,600,1200,1800};
         public int numD = 0;
         public int numT = 0;
 
@@ -84,9 +83,6 @@ namespace Autoclicker
                 }
                 _isCapturing = false;
                 _cts?.Cancel();
-            }else if(e.Key == Key.Q && _letsStartClicking)
-            {
-                _clk = true;
             }
         }
         private void delayIncrement(object? sender, RoutedEventArgs e)
@@ -143,17 +139,27 @@ namespace Autoclicker
         }
         private async void startClicking(object? sender, RoutedEventArgs e)
         {
-            _letsStartClicking = true;
-            for (int i = 0; i < 500; i++)
+            _cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeNo[numT]));
+            var token = _cts.Token;
+            try
             {
-                if (_clk)
-                    break;
-                SetCursorPos(posX, posY);
-                await Task.Delay(10);
-                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-                await Task.Delay(10);
-                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-                await Task.Delay(50);
+                while (true) 
+                {
+                    SetCursorPos(posX, posY);
+                    await Task.Delay(10);
+                    mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                    await Task.Delay(10);
+                    mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                    await Task.Delay(delayNo[numD]);
+
+                    token.ThrowIfCancellationRequested();
+                }
+            }
+            catch (OperationCanceledException) { 
+                numD =0;
+                numT = 0;
+                timeText.Text = "Time";
+                delayText.Text = "Delay";
             }
         }
         protected override void OnOpened(EventArgs e)
