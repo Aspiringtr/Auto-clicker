@@ -11,14 +11,15 @@
     <AvaloniaXaml Remove="Assets\styles\Default_styles.axaml" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Assets\icons\ic.ico" />
+    <None Remove="Assets\icons\icon - Copy.svg" />
+    <None Remove="Assets\icons\icon .png" />
     <None Remove="Assets\icons\icon.bmp" />
     <None Remove="Assets\icons\icon.png" />
     <None Remove="Assets\icons\icon.svg" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\icons\icon.bmp" />
-    <AvaloniaResource Include="Assets\icons\icon.png" />
-    <AvaloniaResource Include="Assets\icons\icon.svg" />
     <AvaloniaResource Include="Assets\styles\Default_styles.axaml" />
   </ItemGroup>
 
