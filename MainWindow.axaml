@@ -14,7 +14,9 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="15"
         CanResize="False"
-		KeyDown="OnKeyDown">
+		KeyDown="OnKeyDown"
+		Icon="/Assets/icons/icon.bmp"
+		>
 	<Window.Styles>
 		<Style Selector="Button">
 			<Setter Property="Grid.ColumnSpan" Value="3"/>
