@@ -15,7 +15,7 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
 - ✅ Press `Q` to capture current mouse position
 - ✅ Press `Start` to start auto-clicking at the position
 - ✅ Live mouse position shown in a `TextBlock`
-
+- ✅ Acrylic ui because I like it
 ---
 
 ## 🧰 Tech Stack
@@ -41,3 +41,4 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
    ```bash
    git clone https://github.com/Aspiringtr/Auto-clicker.git
    cd Auto-clicker
+   dotnet run
