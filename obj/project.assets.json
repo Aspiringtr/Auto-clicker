@@ -107,23 +107,6 @@
           "buildTransitive/Avalonia.BuildServices.targets": {}
         }
       },
-      "Avalonia.Controls.ColorPicker/11.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.0",
-          "Avalonia.Remote.Protocol": "11.3.0"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Controls.ColorPicker.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Controls.ColorPicker.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Avalonia.Desktop/11.3.0": {
         "type": "package",
         "dependencies": {
@@ -140,24 +123,6 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.Desktop.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Avalonia.Diagnostics/11.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.0",
-          "Avalonia.Controls.ColorPicker": "11.3.0",
-          "Avalonia.Themes.Simple": "11.3.0"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Diagnostics.dll": {
             "related": ".xml"
           }
         }
@@ -264,22 +229,6 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.Themes.Fluent.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Avalonia.Themes.Simple/11.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.0"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Themes.Simple.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Themes.Simple.dll": {
             "related": ".xml"
           }
         }
@@ -773,24 +722,6 @@
         "tools/netstandard2.0/runtimeconfig.json"
       ]
     },
-    "Avalonia.Controls.ColorPicker/11.3.0": {
-      "sha512": "MqwZPVdBiDc0h6DHVG5Igb+bd+3o7IOM9nbHgNPlJn38xG0jQb+YqqRcvnt/KnD5FBEaXZcGmiW3rqU9ydXvlg==",
-      "type": "package",
-      "path": "avalonia.controls.colorpicker/11.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.controls.colorpicker.11.3.0.nupkg.sha512",
-        "avalonia.controls.colorpicker.nuspec",
-        "lib/net6.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/net6.0/Avalonia.Controls.ColorPicker.xml",
-        "lib/net8.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/net8.0/Avalonia.Controls.ColorPicker.xml",
-        "lib/netstandard2.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
-      ]
-    },
     "Avalonia.Desktop/11.3.0": {
       "sha512": "X1nUSIDHPFt34U8Dn4Hk8/c/i+rN3pA0Nv4awfYHlYdenmLqE82gm8fpKmQE6/OfguUN1yMYi/uU9lAAAbd2hg==",
       "type": "package",
@@ -807,24 +738,6 @@
         "lib/net8.0/Avalonia.Desktop.xml",
         "lib/netstandard2.0/Avalonia.Desktop.dll",
         "lib/netstandard2.0/Avalonia.Desktop.xml"
-      ]
-    },
-    "Avalonia.Diagnostics/11.3.0": {
-      "sha512": "P152VhCexkrvTLRiRj7mSzUSMGKwTEsbz/XWTogV/33vGVWeCC8tStf/c8YsRrU5kSITtKeCV52UOh4m46hTfA==",
-      "type": "package",
-      "path": "avalonia.diagnostics/11.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.diagnostics.11.3.0.nupkg.sha512",
-        "avalonia.diagnostics.nuspec",
-        "lib/net6.0/Avalonia.Diagnostics.dll",
-        "lib/net6.0/Avalonia.Diagnostics.xml",
-        "lib/net8.0/Avalonia.Diagnostics.dll",
-        "lib/net8.0/Avalonia.Diagnostics.xml",
-        "lib/netstandard2.0/Avalonia.Diagnostics.dll",
-        "lib/netstandard2.0/Avalonia.Diagnostics.xml"
       ]
     },
     "Avalonia.Fonts.Inter/11.3.0": {
@@ -934,24 +847,6 @@
         "lib/net8.0/Avalonia.Themes.Fluent.xml",
         "lib/netstandard2.0/Avalonia.Themes.Fluent.dll",
         "lib/netstandard2.0/Avalonia.Themes.Fluent.xml"
-      ]
-    },
-    "Avalonia.Themes.Simple/11.3.0": {
-      "sha512": "pGurEpish9NS89iiBLbvIlN+DJ5hGaW1ABxcIl6XL9M/WcvUPtLznxoI0dbW2zw8OLDSsvowbsvQLdyknEvmhA==",
-      "type": "package",
-      "path": "avalonia.themes.simple/11.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.themes.simple.11.3.0.nupkg.sha512",
-        "avalonia.themes.simple.nuspec",
-        "lib/net6.0/Avalonia.Themes.Simple.dll",
-        "lib/net6.0/Avalonia.Themes.Simple.xml",
-        "lib/net8.0/Avalonia.Themes.Simple.dll",
-        "lib/net8.0/Avalonia.Themes.Simple.xml",
-        "lib/netstandard2.0/Avalonia.Themes.Simple.dll",
-        "lib/netstandard2.0/Avalonia.Themes.Simple.xml"
       ]
     },
     "Avalonia.Win32/11.3.0": {
@@ -1426,7 +1321,6 @@
     "net8.0": [
       "Avalonia >= 11.3.0",
       "Avalonia.Desktop >= 11.3.0",
-      "Avalonia.Diagnostics >= 11.3.0",
       "Avalonia.Fonts.Inter >= 11.3.0",
       "Avalonia.Themes.Fluent >= 11.3.0",
       "MouseKeyHook >= 5.7.1"
@@ -1488,10 +1382,6 @@
             "version": "[11.3.0, )"
           },
           "Avalonia.Desktop": {
-            "target": "Package",
-            "version": "[11.3.0, )"
-          },
-          "Avalonia.Diagnostics": {
             "target": "Package",
             "version": "[11.3.0, )"
           },

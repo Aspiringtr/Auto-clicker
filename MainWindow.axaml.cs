@@ -2,7 +2,6 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Threading;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
