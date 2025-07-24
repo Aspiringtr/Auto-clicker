@@ -42,3 +42,5 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
    git clone https://github.com/Aspiringtr/Auto-clicker.git
    cd Auto-clicker
    dotnet run
+2. **If you are a windows user navigate to bin->debug->net8.0**
+   inside the net8.0 run the Autoclicker.exe to use the application
