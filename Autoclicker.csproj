@@ -6,29 +6,29 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+	<ApplicationIcon>Assets\icons\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaXaml Remove="Assets\styles\Default_styles.axaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Assets\icons\ic.ico" />
-    <None Remove="Assets\icons\icon - Copy.svg" />
-    <None Remove="Assets\icons\icon .png" />
     <None Remove="Assets\icons\icon.bmp" />
+    <None Remove="Assets\icons\icon.ico" />
     <None Remove="Assets\icons\icon.png" />
-    <None Remove="Assets\icons\icon.svg" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\icons\icon.bmp" />
+    <AvaloniaResource Include="Assets\icons\icon.ico" />
     <AvaloniaResource Include="Assets\styles\Default_styles.axaml" />
   </ItemGroup>
-
+  <ItemGroup>
+	<None Include="Assets\icons\icon.ico" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.0" />
     <PackageReference Include="Avalonia.Desktop" Version="11.3.0" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.0" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.0" />
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Include="Avalonia.Diagnostics" Version="11.3.0">
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
