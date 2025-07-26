@@ -14,6 +14,7 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
 - ✅ Start mouse tracking with a button
 - ✅ Press `Q` to capture current mouse position
 - ✅ Press `Start` to start auto-clicking at the position
+- ✅ Press `Q` to stop the auto clicking
 - ✅ Live mouse position shown in a `TextBlock`
 - ✅ Acrylic ui because I like it
 ---
