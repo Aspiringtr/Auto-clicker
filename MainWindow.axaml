@@ -10,12 +10,14 @@
 		Width="200"
 		Height="230"
 		CornerRadius="8"
+		Topmost="True"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="15"
         CanResize="False"
 		KeyDown="OnKeyDown"
 		Icon="/Assets/icons/icon.bmp"
+		Title="Click Bot"
 		>
 	<Window.Styles>
 		<Style Selector="Button">

@@ -7,14 +7,22 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using System.Collections.Generic;
+using SharpHook;
+using SharpHook.Reactive;
+using SharpHook.Native;
+using System.Reactive.Linq;
+using SharpHook.Data;
+
+
 
 namespace Autoclicker
 {
     public partial class MainWindow : Window
     {
         private bool _isCapturing = false;
-        private CancellationTokenSource _cts;
-
+        private CancellationTokenSource? _cts;
+        private IReactiveGlobalHook? _hook;
+        
         const int MOUSEEVENTF_LEFTDOWN = 0x02;
         const int MOUSEEVENTF_LEFTUP = 0x04;
         public int posX;
@@ -27,6 +35,7 @@ namespace Autoclicker
         public int numT = 0;
         public int numSD = 0;
         public int numST = 0;
+
 
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(out POINT lpPoint);
@@ -148,6 +157,8 @@ namespace Autoclicker
         }
         private async void startClicking(object? sender, RoutedEventArgs e)
         {
+            RegisterGlobalKeyHook();
+
             _cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeNo[numST]));
             var token = _cts.Token;
             try
@@ -170,6 +181,19 @@ namespace Autoclicker
                 timeText.Text = "Time";
                 delayText.Text = "Delay";
             }
+        }
+        private void RegisterGlobalKeyHook()
+        {
+            _hook = new SimpleReactiveGlobalHook();
+
+            _hook.KeyPressed
+                .Where(e => e.Data.KeyCode == KeyCode.VcQ)
+                .Subscribe(_ =>
+                {
+                    _cts?.Cancel();
+                });
+
+            _hook.RunAsync();
         }
         protected override void OnOpened(EventArgs e)
         {

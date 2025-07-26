@@ -67,9 +67,13 @@
               "target": "Package",
               "version": "[11.3.0, )"
             },
-            "MouseKeyHook": {
+            "SharpHook": {
               "target": "Package",
-              "version": "[5.7.1, )"
+              "version": "[6.2.0, )"
+            },
+            "SharpHook.Reactive": {
+              "target": "Package",
+              "version": "[6.2.0, )"
             }
           },
           "imports": [

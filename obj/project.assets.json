@@ -381,13 +381,76 @@
           "lib/net5.0/MicroCom.Runtime.dll": {}
         }
       },
-      "MouseKeyHook/5.7.1": {
+      "SharpHook/6.2.0": {
         "type": "package",
         "compile": {
-          "lib/net472/Gma.System.MouseKeyHook.dll": {}
+          "lib/net8.0/SharpHook.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net472/Gma.System.MouseKeyHook.dll": {}
+          "lib/net8.0/SharpHook.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libuiohook.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libuiohook.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libuiohook.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/maccatalyst-arm64/native/libuiohook.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-arm64"
+          },
+          "runtimes/maccatalyst-x64/native/libuiohook.dylib": {
+            "assetType": "native",
+            "rid": "maccatalyst-x64"
+          },
+          "runtimes/osx-arm64/native/libuiohook.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libuiohook.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-arm64/native/uiohook.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/uiohook.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/uiohook.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "SharpHook.Reactive/6.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SharpHook": "6.2.0",
+          "System.Reactive": "6.0.1"
+        },
+        "compile": {
+          "lib/net8.0/SharpHook.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/SharpHook.Reactive.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SkiaSharp/2.88.9": {
@@ -497,6 +560,22 @@
         },
         "runtime": {
           "lib/net8.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Reactive/6.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
             "related": ".xml"
           }
         },
@@ -1078,20 +1157,65 @@
         "microcom.runtime.nuspec"
       ]
     },
-    "MouseKeyHook/5.7.1": {
-      "sha512": "c0VhB6cbcOpMOcoCQmvPMVqxaH76S4IPHwpbCIY7XKUNimdj9+81rX+Evnu5O53xYgUvdD7g0qmlVeZP2wGCnA==",
+    "SharpHook/6.2.0": {
+      "sha512": "mRzpiAQ0ks6Z2lM3SWSOGBYYWwVwUJ+M6HbgQqCGO+4lxo5MulBrAlceGlJOdTWs5OmrVYV/W9BKtKQ/pOGnhg==",
       "type": "package",
-      "path": "mousekeyhook/5.7.1",
+      "path": "sharphook/6.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net472/Gma.System.MouseKeyHook.dll",
-        "lib/net48/Gma.System.MouseKeyHook.dll",
-        "lib/net6.0-windows7.0/Gma.System.MouseKeyHook.dll",
-        "lib/net7.0-windows7.0/Gma.System.MouseKeyHook.dll",
-        "mouse-keyboard-hook-logo64x64.png",
-        "mousekeyhook.5.7.1.nupkg.sha512",
-        "mousekeyhook.nuspec"
+        "README.md",
+        "build/net462/SharpHook.targets",
+        "icon.png",
+        "lib/net472/SharpHook.dll",
+        "lib/net472/SharpHook.xml",
+        "lib/net8.0-maccatalyst18.0/SharpHook.dll",
+        "lib/net8.0-maccatalyst18.0/SharpHook.xml",
+        "lib/net8.0/SharpHook.dll",
+        "lib/net8.0/SharpHook.xml",
+        "lib/net9.0-maccatalyst18.0/SharpHook.dll",
+        "lib/net9.0-maccatalyst18.0/SharpHook.xml",
+        "lib/net9.0/SharpHook.dll",
+        "lib/net9.0/SharpHook.xml",
+        "lib/netstandard2.0/SharpHook.dll",
+        "lib/netstandard2.0/SharpHook.xml",
+        "runtimes/linux-arm/native/libuiohook.so",
+        "runtimes/linux-arm64/native/libuiohook.so",
+        "runtimes/linux-x64/native/libuiohook.so",
+        "runtimes/maccatalyst-arm64/native/libuiohook.dylib",
+        "runtimes/maccatalyst-x64/native/libuiohook.dylib",
+        "runtimes/osx-arm64/native/libuiohook.dylib",
+        "runtimes/osx-x64/native/libuiohook.dylib",
+        "runtimes/win-arm64/native/uiohook.dll",
+        "runtimes/win-x64/native/uiohook.dll",
+        "runtimes/win-x86/native/uiohook.dll",
+        "sharphook.6.2.0.nupkg.sha512",
+        "sharphook.nuspec"
+      ]
+    },
+    "SharpHook.Reactive/6.2.0": {
+      "sha512": "roEcEBFlv3UJNfzPua6+O6QdZ3LL+W9DNa48YKPC6NR3hqod5fe3G0U3cUgOaJFWoho6KoEYjOAcj7V/9+MctQ==",
+      "type": "package",
+      "path": "sharphook.reactive/6.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net472/SharpHook.Reactive.dll",
+        "lib/net472/SharpHook.Reactive.xml",
+        "lib/net8.0-maccatalyst18.0/SharpHook.Reactive.dll",
+        "lib/net8.0-maccatalyst18.0/SharpHook.Reactive.xml",
+        "lib/net8.0/SharpHook.Reactive.dll",
+        "lib/net8.0/SharpHook.Reactive.xml",
+        "lib/net9.0-maccatalyst18.0/SharpHook.Reactive.dll",
+        "lib/net9.0-maccatalyst18.0/SharpHook.Reactive.xml",
+        "lib/net9.0/SharpHook.Reactive.dll",
+        "lib/net9.0/SharpHook.Reactive.xml",
+        "lib/netstandard2.0/SharpHook.Reactive.dll",
+        "lib/netstandard2.0/SharpHook.Reactive.xml",
+        "sharphook.reactive.6.2.0.nupkg.sha512",
+        "sharphook.reactive.nuspec"
       ]
     },
     "SkiaSharp/2.88.9": {
@@ -1301,6 +1425,34 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Reactive/6.0.1": {
+      "sha512": "rHaWtKDwCi9qJ3ObKo8LHPMuuwv33YbmQi7TcUK1C264V3MFnOr5Im7QgCTdLniztP3GJyeiSg5x8NqYJFqRmg==",
+      "type": "package",
+      "path": "system.reactive/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net6.0-windows10.0.19041/_._",
+        "build/net6.0/_._",
+        "buildTransitive/net6.0-windows10.0.19041/_._",
+        "buildTransitive/net6.0/_._",
+        "icon.png",
+        "lib/net472/System.Reactive.dll",
+        "lib/net472/System.Reactive.xml",
+        "lib/net6.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net6.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net6.0/System.Reactive.dll",
+        "lib/net6.0/System.Reactive.xml",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.18362/System.Reactive.dll",
+        "lib/uap10.0.18362/System.Reactive.pri",
+        "lib/uap10.0.18362/System.Reactive.xml",
+        "readme.md",
+        "system.reactive.6.0.1.nupkg.sha512",
+        "system.reactive.nuspec"
+      ]
+    },
     "Tmds.DBus.Protocol/0.21.2": {
       "sha512": "ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
       "type": "package",
@@ -1323,7 +1475,8 @@
       "Avalonia.Desktop >= 11.3.0",
       "Avalonia.Fonts.Inter >= 11.3.0",
       "Avalonia.Themes.Fluent >= 11.3.0",
-      "MouseKeyHook >= 5.7.1"
+      "SharpHook >= 6.2.0",
+      "SharpHook.Reactive >= 6.2.0"
     ]
   },
   "packageFolders": {
@@ -1393,9 +1546,13 @@
             "target": "Package",
             "version": "[11.3.0, )"
           },
-          "MouseKeyHook": {
+          "SharpHook": {
             "target": "Package",
-            "version": "[5.7.1, )"
+            "version": "[6.2.0, )"
+          },
+          "SharpHook.Reactive": {
+            "target": "Package",
+            "version": "[6.2.0, )"
           }
         },
         "imports": [
@@ -1417,17 +1574,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'MouseKeyHook 5.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "MouseKeyHook",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }
