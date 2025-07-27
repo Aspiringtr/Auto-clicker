@@ -35,6 +35,9 @@ A minimal, cross-platform **Auto Clicker** built using [Avalonia UI](https://ava
 - Avalonia UI NuGet packages
 
 ---
+## Preview
+![sample](https://github.com/Aspiringtr/Auto-clicker/tree/master/Assets/images/sample.png)
+---
 
 ## 🔧 Build & Run
 
